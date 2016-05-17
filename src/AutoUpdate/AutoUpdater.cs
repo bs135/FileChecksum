@@ -41,8 +41,9 @@ namespace AutoUpdate
         /// Checks for an update for the program passed.
         /// If there is an update, a dialog asking to download will appear
         /// </summary>
-        public void DoUpdate()
+        public void DoUpdate(bool showMsg = true)
         {
+            this.applicationInfo.ShowMsg = showMsg;
             if (!this.bgWorker.IsBusy)
                 this.bgWorker.RunWorkerAsync(this.applicationInfo);
         }
@@ -67,22 +68,24 @@ namespace AutoUpdate
         private void bgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             // If there is a file on the server
-			if (!e.Cancelled)
-			{
-				AutoUpdateXml update = (AutoUpdateXml)e.Result;
+            if (!e.Cancelled)
+            {
+                AutoUpdateXml update = (AutoUpdateXml)e.Result;
 
-				// Check if the update is not null and is a newer version than the current application
-				if (update != null && update.IsNewerThan(this.applicationInfo.ApplicationAssembly.GetName().Version))
-				{
-					// Ask to accept the update
-					if (new AutoUpdateAcceptForm(this.applicationInfo, update).ShowDialog(this.applicationInfo.Context) == DialogResult.Yes)
-						this.DownloadUpdate(update); // Do the update
-				}
-				else
-					MessageBox.Show("You have the latest version already!");
-			}
-			else
-				MessageBox.Show("No update information found!");
+                // Check if the update is not null and is a newer version than the current application
+                if (update != null && update.IsNewerThan(this.applicationInfo.ApplicationAssembly.GetName().Version))
+                {
+                    // Ask to accept the update
+                    if (new AutoUpdateAcceptForm(this.applicationInfo, update).ShowDialog(this.applicationInfo.Context) == DialogResult.Yes)
+                        this.DownloadUpdate(update); // Do the update
+                }
+                else
+                    if (this.applicationInfo.ShowMsg)
+                        MessageBox.Show("You have the latest version already!");
+            }
+            else
+                if (this.applicationInfo.ShowMsg)
+                    MessageBox.Show("No update information found!");
         }
 
         /// <summary>
