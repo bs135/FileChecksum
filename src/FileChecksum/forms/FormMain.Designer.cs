@@ -36,9 +36,9 @@
             // 
             // btnInstall
             // 
-            this.btnInstall.Location = new System.Drawing.Point(108, 104);
+            this.btnInstall.Location = new System.Drawing.Point(99, 24);
             this.btnInstall.Name = "btnInstall";
-            this.btnInstall.Size = new System.Drawing.Size(75, 23);
+            this.btnInstall.Size = new System.Drawing.Size(120, 23);
             this.btnInstall.TabIndex = 0;
             this.btnInstall.Text = "Install";
             this.btnInstall.UseVisualStyleBackColor = true;
@@ -46,7 +46,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(12, 226);
+            this.btnUpdate.Location = new System.Drawing.Point(99, 84);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(120, 23);
             this.btnUpdate.TabIndex = 1;
@@ -56,9 +56,9 @@
             // 
             // btnUninstall
             // 
-            this.btnUninstall.Location = new System.Drawing.Point(108, 133);
+            this.btnUninstall.Location = new System.Drawing.Point(99, 53);
             this.btnUninstall.Name = "btnUninstall";
-            this.btnUninstall.Size = new System.Drawing.Size(75, 23);
+            this.btnUninstall.Size = new System.Drawing.Size(120, 23);
             this.btnUninstall.TabIndex = 2;
             this.btnUninstall.Text = "Uninstall";
             this.btnUninstall.UseVisualStyleBackColor = true;
@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(323, 135);
             this.Controls.Add(this.btnUninstall);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnInstall);

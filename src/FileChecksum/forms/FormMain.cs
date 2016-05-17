@@ -29,23 +29,32 @@ namespace FileChecksum
 
         private void btnInstall_Click(object sender, EventArgs e)
         {
-            //RegistryKey key;
-            //key = Registry.ClassesRoot.CreateSubKey(@"File\shell\MD5 Checksum");
-            //key = Registry.ClassesRoot.CreateSubKey(@"File\shell\MD5 Checksum\command");
-            //key.SetValue("", Application.ExecutablePath + " %1");
+            try
+            {
+                RegistryKey key;
+                key = Registry.ClassesRoot.CreateSubKey(@"*\shell\MD5 Checksum");
+                key = Registry.ClassesRoot.CreateSubKey(@"*\shell\MD5 Checksum\command");
+                key.SetValue("", Application.ExecutablePath + " \"%1\"");
 
-            RegistryKey key;
-            key = Registry.ClassesRoot.CreateSubKey(@"*\shell\MD5 Checksum");
-            key = Registry.ClassesRoot.CreateSubKey(@"*\shell\MD5 Checksum\command");
-            key.SetValue("", Application.ExecutablePath + " \"%1\"");
+                MessageBox.Show("Install successfully!");
+            }
+            catch
+            {
+                MessageBox.Show("Error! Please run application as Administrator");
+            }
 
         }
         private void btnUninstall_Click(object sender, EventArgs e)
         {
-            //Registry.ClassesRoot.DeleteSubKeyTree(@"File\shell\MD5 Checksum");
-            //Registry.ClassesRoot.DeleteSubKey(@"Folder\shell\MD5 Checksum\command");
-
-            Registry.ClassesRoot.DeleteSubKeyTree(@"*\shell\MD5 Checksum\command");
+            try
+            {
+                Registry.ClassesRoot.DeleteSubKeyTree(@"*\shell\MD5 Checksum\command");
+                MessageBox.Show("Un-Install successfully!");
+            }
+            catch
+            {
+                MessageBox.Show("Error! Please run application as Administrator");
+            }
         }
 
         #region AutoUpdate
