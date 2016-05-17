@@ -48,7 +48,7 @@ namespace FileChecksum
         {
             try
             {
-                Registry.ClassesRoot.DeleteSubKeyTree(@"*\shell\MD5 Checksum\command");
+                Registry.ClassesRoot.DeleteSubKeyTree(@"*\shell\MD5 Checksum");
                 MessageBox.Show("Un-Install successfully!");
             }
             catch

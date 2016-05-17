@@ -2,11 +2,14 @@
 <sharpUpdate>
     <update appID="BS135-FileChecksum">
         <version>1.0.1.0</version>
-        <url>https://github.com/bs135/FileChecksum/raw/master/ReleaseDownload/v1.0.2/FileChecksum.exe</url>
+        <url>https://github.com/bs135/FileChecksum/raw/master/ReleaseDownload/v1.0.3/FileChecksum.exe</url>
         <fileName>FileChecksum.exe</fileName>
         <md5>F16F9270971EAEAE8E313B32E8FF0814</md5>
         <description>
           Update:
+
+          Version 1.0.3.0 - 2016/05/18
+          - Fixbug
 
           Version 1.0.2.0 - 2016/05/17
           - Show message when install or uninstall
