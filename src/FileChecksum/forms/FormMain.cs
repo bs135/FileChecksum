@@ -24,7 +24,7 @@ namespace FileChecksum
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-
+            updater.DoUpdate(false);
         }
 
         #region AutoUpdate
