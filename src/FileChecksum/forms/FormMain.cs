@@ -50,7 +50,7 @@ namespace FileChecksum
 
         public Uri UpdateXmlLocation
         {
-            get { return new Uri("https://github.com/bs135/FileChecksum/raw/master/src/FileChecksum/appinfo.xml"); }
+            get { return new Uri("https://github.com/bs135/FileChecksum/raw/master/ReleaseDownload/appinfo.xml"); }
         }
 
         public Form Context
