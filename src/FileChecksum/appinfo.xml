@@ -1,14 +1,16 @@
 <?xml version="1.0"?>
 <sharpUpdate>
     <update appID="BS135-FileChecksum">
-        <version>1.0.0.0</version>
+        <version>1.0.1.0</version>
         <url>https://github.com/bs135/FileChecksum/raw/master/ReleaseDownload/v1.0.0/FileChecksum.exe</url>
         <fileName>FileChecksum.exe</fileName>
         <md5>F16F9270971EAEAE8E313B32E8FF0814</md5>
         <description>
           Update:
+          Version 1.0.1.0 - 2016/05/17
+          - Add to context menu
 
-          2016/05/17
+          Version 1.0.0.0 - 2016/05/17
           - First release
         </description>
         <launchArgs></launchArgs>

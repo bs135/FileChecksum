@@ -1,14 +1,9 @@
 ﻿using AutoUpdate;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace FileChecksum
 {
@@ -25,6 +20,32 @@ namespace FileChecksum
         private void FormMain_Load(object sender, EventArgs e)
         {
             updater.DoUpdate(false);
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            updater.DoUpdate();
+        }
+
+        private void btnInstall_Click(object sender, EventArgs e)
+        {
+            //RegistryKey key;
+            //key = Registry.ClassesRoot.CreateSubKey(@"File\shell\MD5 Checksum");
+            //key = Registry.ClassesRoot.CreateSubKey(@"File\shell\MD5 Checksum\command");
+            //key.SetValue("", Application.ExecutablePath + " %1");
+
+            RegistryKey key;
+            key = Registry.ClassesRoot.CreateSubKey(@"*\shell\MD5 Checksum");
+            key = Registry.ClassesRoot.CreateSubKey(@"*\shell\MD5 Checksum\command");
+            key.SetValue("", Application.ExecutablePath + " \"%1\"");
+
+        }
+        private void btnUninstall_Click(object sender, EventArgs e)
+        {
+            //Registry.ClassesRoot.DeleteSubKeyTree(@"File\shell\MD5 Checksum");
+            //Registry.ClassesRoot.DeleteSubKey(@"Folder\shell\MD5 Checksum\command");
+
+            Registry.ClassesRoot.DeleteSubKeyTree(@"*\shell\MD5 Checksum\command");
         }
 
         #region AutoUpdate
@@ -73,14 +94,5 @@ namespace FileChecksum
 
         #endregion
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            updater.DoUpdate();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            updater.DoUpdate(false);
-        }
     }
 }
