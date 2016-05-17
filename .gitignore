@@ -22,6 +22,7 @@ bld/
 [Oo]bj/
 !ReleaseDownload/*.exe
 !ReleaseDownload/*/*.exe
+!FileChecksum.exe
 
 # Visual Studio 2015 cache/options directory
 .vs/
