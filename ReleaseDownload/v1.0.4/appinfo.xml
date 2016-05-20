@@ -1,15 +1,12 @@
 <?xml version="1.0"?>
 <sharpUpdate>
     <update appID="BS135-FileChecksum">
-        <version>1.0.5.0</version>
-        <url>https://github.com/bs135/FileChecksum/raw/master/ReleaseDownload/v1.0.5/FileChecksum.exe</url>
+        <version>1.0.4.0</version>
+        <url>https://github.com/bs135/FileChecksum/raw/master/ReleaseDownload/v1.0.4/FileChecksum.exe</url>
         <fileName>FileChecksum.exe</fileName>
-        <md5>b785e51642ecfba9186228f9d8fabf50</md5>
+        <md5>10cfe1c2c1c67be9b4f8d350f05027bc</md5>
         <description>
           Update:
-
-          Version 1.0.5.0 - 2016/05/20
-          - Add auto-update for Result form
 
           Version 1.0.4.0 - 2016/05/20
           - Add icon

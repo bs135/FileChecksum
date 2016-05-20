@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 using Microsoft.Win32;
+using System.IO;
 
 namespace FileChecksum
 {
@@ -32,8 +33,11 @@ namespace FileChecksum
             try
             {
                 RegistryKey key;
-                key = Registry.ClassesRoot.CreateSubKey(@"*\shell\MD5 Checksum");
-                key = Registry.ClassesRoot.CreateSubKey(@"*\shell\MD5 Checksum\command");
+                key = Registry.ClassesRoot.CreateSubKey(@"*\shell\MD5Checksum");
+                key.SetValue("", "MD5 Checksum verify");
+                key.SetValue("icon", Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "hash.ico"));
+
+                key = Registry.ClassesRoot.CreateSubKey(@"*\shell\MD5Checksum\command");
                 key.SetValue("", Application.ExecutablePath + " \"%1\"");
 
                 MessageBox.Show("Install successfully!");
@@ -48,7 +52,7 @@ namespace FileChecksum
         {
             try
             {
-                Registry.ClassesRoot.DeleteSubKeyTree(@"*\shell\MD5 Checksum");
+                Registry.ClassesRoot.DeleteSubKeyTree(@"*\shell\MD5Checksum");
                 MessageBox.Show("Un-Install successfully!");
             }
             catch
